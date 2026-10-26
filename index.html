@@ -1,6 +1,189 @@
-<div class="grid-label">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robert Jacobson // Visual Producer & Commercial Editor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0d0e;
+      --card-bg: #141618;
+      --card-border: #23272b;
+      --text-main: #f0f2f5;
+      --text-muted: #8b949e;
+      --meta: #58a6ff;
+      --accent: #2ea043;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 1.5rem;
+    }
+
+    .brand-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .brand-subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .grid-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .reel-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+
+    @media (min-width: 768px) {
+      .reel-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
+      }
+    }
+
+    @media (min-width: 1100px) {
+      .reel-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    .video-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .player-box {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background-color: #000;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .player-box video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .card-info {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      font-size: 0.75rem;
+    }
+
+    .meta-mono {
+      font-family: 'Space Mono', monospace;
+      color: var(--meta);
+      font-weight: 700;
+    }
+
+    .meta-mono.tag-sub {
+      color: var(--text-muted);
+    }
+
+    .card-info h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .card-info p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer a {
+      color: var(--meta);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="brand-title">Robert Jacobson</h1>
+      <p class="brand-subtitle">// Visual Producer & Commercial Editor — New Orleans, LA</p>
+    </header>
+
+    <div class="grid-label">
       <span class="meta-mono">// CURATED EDITORIAL & PRODUCTION REEL</span>
-      <span class="meta-mono">NEW ORLEANS, LA</span>
+      <span class="meta-mono">EXPANDED 6-SLOT SHOWCASE</span>
     </div>
 
     <main class="reel-grid">
@@ -15,7 +198,7 @@
         <div class="card-info">
           <div class="card-top">
             <span class="meta-mono">// COMMERCIAL REEL</span>
-            <span class="meta-mono">EDITORIAL SHOWCASE</span>
+            <span class="meta-mono tag-sub">FEATURED CUT</span>
           </div>
           <h3>Primary Motion & Visual Reel</h3>
           <p>Curated commercial montage showcasing high-tempo cutting, sound design, visual rhythm, and multi-format post-production.</p>
@@ -33,14 +216,14 @@
         <div class="card-info">
           <div class="card-top">
             <span class="meta-mono">// AUTOMOTIVE COMMERCIAL</span>
-            <span class="meta-mono">BROADCAST SPOT</span>
+            <span class="meta-mono tag-sub">BROADCAST SPOT</span>
           </div>
           <h3>Dream Cars Austin // Seasonal Retail Spot</h3>
           <p>Character-driven dealership commercial balancing comedic timing, seasonal retail branding, and high-energy sales urgency.</p>
         </div>
       </article>
 
-      <!-- Slot 03: Crypto / Fintech Motion Design -->
+      <!-- Slot 03: Crypto / FinTech Motion Design -->
       <article class="video-card">
         <div class="player-box">
           <video controls playsinline preload="metadata" poster="thumb-03.jpg">
@@ -51,10 +234,10 @@
         <div class="card-info">
           <div class="card-top">
             <span class="meta-mono">// MOTION DESIGN & VFX</span>
-            <span class="meta-mono">SMARTFI // BRANDED TECH</span>
+            <span class="meta-mono tag-sub">SMARTFI</span>
           </div>
           <h3>SmartFi // FinTech Motion Graphics</h3>
-          <p>Bespoke After Effects design utilizing custom generative plugins, built in collaboration with creative direction and executive teams.</p>
+          <p>Bespoke After Effects workflow utilizing custom generative plugins, built in collaboration with creative direction and executive teams.</p>
         </div>
       </article>
 
@@ -69,7 +252,7 @@
         <div class="card-info">
           <div class="card-top">
             <span class="meta-mono">// BROADCAST TEASER</span>
-            <span class="meta-mono">WDSU NEWS 6 / NBC</span>
+            <span class="meta-mono tag-sub">WDSU NEWS 6</span>
           </div>
           <h3>Newsroom Pre-Pro Cold Open</h3>
           <p>High-tension pre-produced broadcast tease engineered for immediate audience hook, fast information hierarchy, and viewer retention.</p>
@@ -87,14 +270,14 @@
         <div class="card-info">
           <div class="card-top">
             <span class="meta-mono">// DOCUMENTARY TRAILER</span>
-            <span class="meta-mono">FEATURE FILM</span>
+            <span class="meta-mono tag-sub">FEATURE FILM</span>
           </div>
           <h3>Original Motion Picture Soundtrack</h3>
           <p>Feature documentary trailer exploring iconic 1980s cinema scores. Features original interviews with Kevin Bacon, Corey Feldman, Huey Lewis, and Kenny Loggins.</p>
         </div>
       </article>
 
-      <!-- Slot 06: WDSU In-Depth Package (Emeril Lagasse) -->
+      <!-- Slot 06: WDSU News Package (Emeril Lagasse) -->
       <article class="video-card">
         <div class="player-box">
           <video controls playsinline preload="metadata" poster="thumb-06.jpg">
@@ -105,10 +288,18 @@
         <div class="card-info">
           <div class="card-top">
             <span class="meta-mono">// BROADCAST JOURNALISM</span>
-            <span class="meta-mono">WDSU NEWS 6 / NBC</span>
+            <span class="meta-mono tag-sub">WDSU / NBC</span>
           </div>
           <h3>WDSU Feature // Chef Emeril Lagasse</h3>
           <p>In-depth broadcast interview and field piece highlighting natural sound layering, local culinary culture, and narrative dialogue pacing.</p>
         </div>
       </article>
     </main>
+
+    <footer>
+      <span>Robert Jacobson // Production & Post-Production</span>
+      <span>New Orleans, Louisiana</span>
+    </footer>
+  </div>
+</body>
+</html>
