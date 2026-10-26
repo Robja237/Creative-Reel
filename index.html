@@ -88,6 +88,13 @@
       margin-top: 0.4rem;
     }
 
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
     .meta-mono {
       font-family: 'Space Mono', monospace;
       font-size: 0.75rem;
@@ -121,6 +128,31 @@
       box-shadow: 0 0 8px #22c55e;
       flex-shrink: 0;
       display: inline-block;
+    }
+
+    .btn-resume {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: clamp(0.64rem, 2.7vw, 0.72rem);
+      font-family: 'Space Mono', monospace;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.2s ease;
+      height: 30px;
+      white-space: nowrap;
+    }
+
+    .btn-resume:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #000000;
     }
 
     .hero-wrap {
@@ -247,12 +279,20 @@
     .player-box {
       width: 100%;
       aspect-ratio: 16 / 9;
-      background: #10121a;
+      background: #000000;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .player-box video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .player-box .placeholder-hint {
@@ -319,17 +359,23 @@
       }
     }
 
-    a.contact-link {
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    a.footer-link {
       color: var(--text-main);
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       border-bottom: 1px solid var(--accent);
       padding-bottom: 2px;
       transition: color 0.2s ease;
     }
 
-    a.contact-link:hover {
+    a.footer-link:hover {
       color: var(--accent);
     }
   </style>
@@ -342,10 +388,13 @@
         ROBERT JACOBSON
         <span>VISUAL PRODUCER // COMMERCIAL & BROADCAST EDITOR</span>
       </div>
-      <div>
+      <div class="header-actions">
         <div class="status-pill">
           <span class="status-dot"></span>AVAILABLE FOR VIDEO PRODUCTION & EDITORIAL
         </div>
+        <a class="btn-resume" href="Robert_Jacobson_Resume.pdf" target="_blank" rel="noopener noreferrer">
+          RESUME (PDF) &darr;
+        </a>
       </div>
     </header>
 
@@ -355,63 +404,63 @@
       
       <div class="bio-panel">
         <p class="bio-text">
-          Broadcast news editor and video producer with <strong>20+ years of frontline post-production experience</strong> spanning live television, national documentary programming, and global branded campaigns.
+          Broadcast news editor and video producer with <strong>20+ years of frontline post-production experience</strong>[cite: 4] spanning live television, national documentary programming, and global branded campaigns[cite: 4].
         </p>
         <p class="bio-text" style="color: var(--text-muted); font-size: 0.98rem;">
-          From the daily deadlines of live broadcast newsrooms (Hearst/NBC WDSU) and national documentary television (CNBC) to commercial campaigns for Amazon and Microsoft, my work centers on speed, editorial precision, and visual narrative that engages immediately.
+          From the daily deadlines of live broadcast newsrooms (Hearst/NBC WDSU)[cite: 4] and national documentary television (CNBC)[cite: 5] to commercial campaigns for Amazon and Microsoft[cite: 5], my work centers on speed, editorial precision, and visual narrative that engages immediately.
         </p>
       </div>
 
       <div class="metrics-bar">
         <div class="metric-item">
           <div class="val">20+ YRS</div>
-          <div class="lbl">Broadcast & Media</div>
+          <div class="lbl">Broadcast & Media[cite: 4]</div>
         </div>
         <div class="metric-item">
           <div class="val">30M+</div>
-          <div class="lbl">Digital Video Views</div>
+          <div class="lbl">Digital Video Views[cite: 5]</div>
         </div>
         <div class="metric-item">
           <div class="val">NBC / CNBC</div>
-          <div class="lbl">National & Affiliate Broadcast</div>
+          <div class="lbl">National & Affiliate Broadcast[cite: 4, 5]</div>
         </div>
         <div class="metric-item">
           <div class="val">AMAZON / MSFT</div>
-          <div class="lbl">Branded Commercial Delivery</div>
+          <div class="lbl">Branded Commercial Delivery[cite: 5]</div>
         </div>
       </div>
     </section>
 
     <div class="grid-label">
       <span class="meta-mono">// CURATED REEL CUTS (4-PART REEL)</span>
-      <span class="meta-mono">NEW ORLEANS, LA</span>
+      <span class="meta-mono">NEW ORLEANS, LA[cite: 4]</span>
     </div>
 
     <main class="reel-grid">
-      <!-- Project 01 -->
+      <!-- Project 01 (Live HTML5 Player) -->
       <article class="video-card">
         <div class="player-box">
-          <div class="placeholder-hint">
-            <div class="play-btn-mock">&#9654;</div>
-            <span>[PROJECT 01 REEL / EMBED]</span>
-          </div>
+          <video controls playsinline preload="metadata">
+            <source src="video-01.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
         </div>
         <div class="card-info">
           <div class="card-top">
-            <span class="meta-mono">// HIGH-VELOCITY MOTION</span>
+            <span class="meta-mono">// COMMERCIAL & REEL</span>
             <span class="meta-mono">2026</span>
           </div>
-          <h3>Action & Hydro-Dynamic Showcase</h3>
-          <p>High-frame-rate commercial speed cuts exploring fluid surface displacement, natural lighting reflections, and rapid vessel velocity.</p>
+          <h3>Primary Commercial Reel</h3>
+          <p>Curated showcase demonstrating high-tempo cuts, sound design, commercial pacing, and broadcast narrative structure.</p>
         </div>
       </article>
 
-      <!-- Project 02 -->
+      <!-- Project 02 (Placeholder) -->
       <article class="video-card">
         <div class="player-box">
           <div class="placeholder-hint">
             <div class="play-btn-mock">&#9654;</div>
-            <span>[PROJECT 02 REEL / EMBED]</span>
+            <span>[PROJECT 02 // IN POST]</span>
           </div>
         </div>
         <div class="card-info">
@@ -424,30 +473,30 @@
         </div>
       </article>
 
-      <!-- Project 03 -->
+      <!-- Project 03 (Placeholder) -->
       <article class="video-card">
         <div class="player-box">
           <div class="placeholder-hint">
             <div class="play-btn-mock">&#9654;</div>
-            <span>[PROJECT 03 REEL / EMBED]</span>
+            <span>[PROJECT 03 // IN POST]</span>
           </div>
         </div>
         <div class="card-info">
           <div class="card-top">
             <span class="meta-mono">// DOCUMENTARY & NARRATIVE</span>
-            <span class="meta-mono">BROADCAST</span>
+            <span class="meta-mono">BROADCAST[cite: 5]</span>
           </div>
           <h3>Editorial Documentary Cut</h3>
           <p>Character-focused visual narrative balancing pacing, archival integration, and clean narrative arcs under strict broadcast delivery standards.</p>
         </div>
       </article>
 
-      <!-- Project 04 -->
+      <!-- Project 04 (Placeholder) -->
       <article class="video-card">
         <div class="player-box">
           <div class="placeholder-hint">
             <div class="play-btn-mock">&#9654;</div>
-            <span>[PROJECT 04 REEL / EMBED]</span>
+            <span>[PROJECT 04 // IN POST]</span>
           </div>
         </div>
         <div class="card-info">
@@ -463,10 +512,11 @@
 
     <footer>
       <div>
-        <p class="meta-mono">ROBERT JACOBSON // (512) 439-9377</p>
+        <p class="meta-mono">ROBERT JACOBSON // (512) 439-9377[cite: 4]</p>
       </div>
-      <div>
-        <a class="contact-link" href="mailto:robertjacobson@startmail.com">EMAIL DIRECT &rarr;</a>
+      <div class="footer-links">
+        <a class="footer-link" href="Robert_Jacobson_Resume.pdf" target="_blank" rel="noopener noreferrer">VIEW RESUME (PDF) &darr;</a>
+        <a class="footer-link" href="mailto:robertjacobson@startmail.com">EMAIL DIRECT &rarr;[cite: 4]</a>
       </div>
     </footer>
   </div>
