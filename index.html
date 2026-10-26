@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selected Works & Reel // 2026</title>
+  
+  <!-- Modern Grotesque & Technical Mono Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #090a0f;
+      --card-bg: rgba(18, 20, 29, 0.6);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(255, 255, 255, 0.22);
+      --text-main: #f4f4f6;
+      --text-muted: #8e92a4;
+      --accent: #ff6a00;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      padding: 3rem 1.5rem;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Top Nav / Status Bar */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 4rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+    }
+
+    .meta-mono {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+    }
+
+    .status-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background-color: #22c55e;
+      border-radius: 50%;
+      margin-right: 6px;
+      box-shadow: 0 0 10px #22c55e;
+    }
+
+    /* Hero / Statement */
+    .headline-wrap {
+      margin-bottom: 3.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      color: var(--text-main);
+      max-width: 900px;
+    }
+
+    h1 span {
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    /* 4-Box Reel Grid */
+    .reel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 2rem;
+    }
+
+    @media (max-width: 580px) {
+      .reel-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .video-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(12px);
+    }
+
+    .video-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+    }
+
+    /* 16:9 Video Box / Placeholder */
+    .player-box {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #11131a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .player-box .placeholder-hint {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.82rem;
+      color: #4b5162;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .play-btn-mock {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-main);
+    }
+
+    /* Card Details */
+    .card-info {
+      padding: 1.5rem;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.6rem;
+    }
+
+    .card-info h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-info p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    a.contact-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px;
+      transition: color 0.2s ease;
+    }
+
+    a.contact-link:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div>
+        <p class="meta-mono">[YOUR NAME] // CREATIVE PRODUCTION</p>
+      </div>
+      <div>
+        <p class="meta-mono"><span class="status-dot"></span>AVAILABLE FOR COMMERCIAL & EDITORIAL ROLES</p>
+      </div>
+    </header>
+
+    <section class="headline-wrap">
+      <p class="meta-mono" style="margin-bottom: 1rem; color: var(--accent);">// SELECTED WORK 2024–2026</p>
+      <h1>Visual pacing, commercial motion, <span>and narrative direction for high-velocity brands.</span></h1>
+    </section>
+
+    <main class="reel-grid">
+      <!-- Project 01 -->
+      <article class="video-card">
+        <div class="player-box">
+          <div class="placeholder-hint">
+            <div class="play-btn-mock">▶</div>
+            <span>[PROJECT 01 VIDEO / EMBED]</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-top">
+            <span class="meta-mono">// AUTOMOTIVE & WATER</span>
+            <span class="meta-mono">2026</span>
+          </div>
+          <h3>Action Dynamic Showcase</h3>
+          <p>High-frame-rate commercial speed cuts exploring fluid surface dynamics, natural light refraction, and vehicle velocity.</p>
+        </div>
+      </article>
+
+      <!-- Project 02 -->
+      <article class="video-card">
+        <div class="player-box">
+          <div class="placeholder-hint">
+            <div class="play-btn-mock">▶</div>
+            <span>[PROJECT 02 VIDEO / EMBED]</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-top">
+            <span class="meta-mono">// BRAND CAMPAIGN</span>
+            <span class="meta-mono">2026</span>
+          </div>
+          <h3>Atmospheric Brand Narrative</h3>
+          <p>Cinematic location storytelling blending rugged environmental textures with premium product framing and sound design.</p>
+        </div>
+      </article>
+
+      <!-- Project 03 -->
+      <article class="video-card">
+        <div class="player-box">
+          <div class="placeholder-hint">
+            <div class="play-btn-mock">▶</div>
+            <span>[PROJECT 03 VIDEO / EMBED]</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-top">
+            <span class="meta-mono">// PRODUCT & HARDWARE</span>
+            <span class="meta-mono">2025</span>
+          </div>
+          <h3>Precision Mechanics</h3>
+          <p>Micro-detail visual pacing highlighting industrial design tolerances, custom rigging, and tactile materials.</p>
+        </div>
+      </article>
+
+      <!-- Project 04 -->
+      <article class="video-card">
+        <div class="player-box">
+          <div class="placeholder-hint">
+            <div class="play-btn-mock">▶</div>
+            <span>[PROJECT 04 VIDEO / EMBED]</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-top">
+            <span class="meta-mono">// EDITORIAL & SHORTS</span>
+            <span class="meta-mono">2025</span>
+          </div>
+          <h3>Velocity Montage</h3>
+          <p>Rapid multi-angle rhythmic edit structured for high-engagement mobile vertical and widescreen syndication.</p>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <p class="meta-mono">DIRECT INQUIRIES & FULL REEL REQUESTS</p>
+      <a class="contact-link" href="mailto:your-email@example.com">GET IN TOUCH →</a>
+    </footer>
+  </div>
+
+</body>
+</html>
