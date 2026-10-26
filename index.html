@@ -19,7 +19,6 @@
       --text-main: #f5f5f7;
       --text-muted: #8c90a2;
       --accent: #ff6a00;
-      --accent-glow: rgba(255, 106, 0, 0.15);
     }
 
     * {
@@ -32,9 +31,15 @@
       background-color: var(--bg);
       color: var(--text-main);
       font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-      padding: 2.5rem 1.5rem;
+      padding: 1.75rem 1.25rem;
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
+    }
+
+    @media (min-width: 768px) {
+      body {
+        padding: 3rem 2rem;
+      }
     }
 
     .container {
@@ -45,17 +50,26 @@
     /* Top Identity Header */
     header {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 3.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 2rem;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 1.5rem;
-      flex-wrap: wrap;
-      gap: 1.25rem;
+      padding-bottom: 1.25rem;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3.5rem;
+        padding-bottom: 1.5rem;
+      }
     }
 
     .brand-title {
-      font-size: clamp(1.4rem, 3.2vw, 2.1rem);
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
       font-weight: 800;
       letter-spacing: -0.04em;
       line-height: 1.1;
@@ -65,19 +79,19 @@
 
     .brand-title span {
       display: block;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-family: 'Space Mono', monospace;
       font-weight: 400;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.12em;
       color: var(--accent);
-      margin-top: 0.35rem;
+      margin-top: 0.4rem;
     }
 
     .meta-mono {
       font-family: 'Space Mono', monospace;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.08em;
       color: var(--text-muted);
     }
 
@@ -86,45 +100,47 @@
       align-items: center;
       background: rgba(34, 197, 94, 0.08);
       border: 1px solid rgba(34, 197, 94, 0.25);
-      padding: 6px 12px;
+      padding: 5px 10px;
       border-radius: 999px;
-      font-size: 0.76rem;
+      font-size: 0.72rem;
       font-family: 'Space Mono', monospace;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       color: #4ade80;
+      white-space: nowrap;
     }
 
     .status-dot {
-      width: 7px;
-      height: 7px;
+      width: 6px;
+      height: 6px;
       background-color: #22c55e;
       border-radius: 50%;
-      margin-right: 8px;
-      box-shadow: 0 0 10px #22c55e;
+      margin-right: 6px;
+      box-shadow: 0 0 8px #22c55e;
+      flex-shrink: 0;
     }
 
     /* Hero / Statement Section */
     .hero-wrap {
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
       max-width: 1040px;
     }
 
     .tagline-callout {
       font-family: 'Space Mono', monospace;
-      font-size: 0.82rem;
-      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
       color: var(--accent);
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       text-transform: uppercase;
     }
 
     h1 {
-      font-size: clamp(2.3rem, 5.2vw, 4.4rem);
+      font-size: clamp(2.1rem, 5.5vw, 4.4rem);
       font-weight: 800;
       letter-spacing: -0.04em;
-      line-height: 1.05;
+      line-height: 1.08;
       color: var(--text-main);
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.5rem;
     }
 
     h1 span {
@@ -134,16 +150,16 @@
 
     .bio-panel {
       border-left: 2px solid var(--accent);
-      padding-left: 1.5rem;
+      padding-left: 1.25rem;
       margin-bottom: 2rem;
     }
 
     .bio-text {
-      font-size: 1.15rem;
-      line-height: 1.65;
+      font-size: 1.05rem;
+      line-height: 1.6;
       color: #c7cbd8;
       max-width: 860px;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
     .bio-text strong {
@@ -151,52 +167,66 @@
       font-weight: 600;
     }
 
-    /* Key Career Metric Strip */
+    /* Metrics Strip */
     .metrics-bar {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.25rem;
-      padding: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      padding: 1.25rem;
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 8px;
-      margin-top: 2rem;
     }
 
     .metric-item .val {
       font-family: 'Space Mono', monospace;
-      font-size: 1.5rem;
+      font-size: 1.35rem;
       font-weight: 700;
       color: var(--text-main);
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.2rem;
     }
 
     .metric-item .lbl {
-      font-size: 0.78rem;
+      font-size: 0.74rem;
       color: var(--text-muted);
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
+    }
+
+    /* Clean Section Label (Mobile Fixed) */
+    .grid-label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-top: 3rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.6rem;
+    }
+
+    @media (min-width: 580px) {
+      .grid-label {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+    }
+
+    .grid-label span {
+      white-space: nowrap;
     }
 
     /* 4-Box Reel Grid */
-    .grid-label {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.75rem;
-    }
-
     .reel-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
-      gap: 2.25rem;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
     }
 
-    @media (max-width: 600px) {
+    @media (min-width: 768px) {
       .reel-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.25rem;
       }
     }
 
@@ -214,7 +244,6 @@
       transform: translateY(-3px);
     }
 
-    /* 16:9 Video Box / Placeholder */
     .player-box {
       width: 100%;
       aspect-ratio: 16 / 9;
@@ -228,7 +257,7 @@
 
     .player-box .placeholder-hint {
       font-family: 'Space Mono', monospace;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: #646b80;
       display: flex;
       align-items: center;
@@ -236,8 +265,8 @@
     }
 
     .play-btn-mock {
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.15);
@@ -245,54 +274,56 @@
       align-items: center;
       justify-content: center;
       color: var(--text-main);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
-    /* Card Details */
     .card-info {
-      padding: 1.5rem;
+      padding: 1.25rem;
     }
 
     .card-top {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
     }
 
     .card-info h3 {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       font-weight: 700;
       letter-spacing: -0.02em;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
     }
 
     .card-info p {
       color: var(--text-muted);
-      font-size: 0.92rem;
+      font-size: 0.88rem;
       line-height: 1.5;
     }
 
     /* Footer */
     footer {
-      margin-top: 5rem;
-      padding-top: 2rem;
+      margin-top: 4rem;
+      padding-top: 1.75rem;
       border-top: 1px solid var(--border);
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
     }
 
-    .direct-links {
-      display: flex;
-      gap: 1.5rem;
+    @media (min-width: 600px) {
+      footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
     }
 
     a.contact-link {
       color: var(--text-main);
       text-decoration: none;
       font-weight: 600;
+      font-size: 0.95rem;
       border-bottom: 1px solid var(--accent);
       padding-bottom: 2px;
       transition: color 0.2s ease;
@@ -319,41 +350,41 @@
     </header>
 
     <section class="hero-wrap">
-      <p class="tagline-callout">// PROFESSIONAL COMMERCIAL REEL & SELECTED WORKS</p>
+      <p class="tagline-callout">// PROFESSIONAL REEL & SELECTED WORKS</p>
       <h1>High-velocity pacing, clean editorial narrative, <span>and broadcast-tested delivery.</span></h1>
       
       <div class="bio-panel">
         <p class="bio-text">
-          Broadcast news editor and video producer with <strong>20+ years of frontline post-production experience</strong> spanning live television, national documentary programming, and global branded campaigns.
+          Broadcast news editor and video producer with <strong>20+ years of frontline post-production experience</strong>[span_5](start_span)[span_5](end_span) spanning live television, national documentary programming, and global branded campaigns[span_6](start_span)[span_6](end_span).
         </p>
-        <p class="bio-text" style="color: var(--text-muted); font-size: 1.02rem;">
-          From the high-pressure daily deadlines of live broadcast newsrooms (Hearst/NBC WDSU) and national documentary television (CNBC) to branded content for Amazon and Microsoft, my work centers on speed, editorial precision, and visual narrative that engages immediately.
+        <p class="bio-text" style="color: var(--text-muted); font-size: 0.98rem;">
+          From the daily deadlines of live broadcast newsrooms (Hearst/NBC WDSU)[span_7](start_span)[span_7](end_span) and national documentary television (CNBC)[span_8](start_span)[span_8](end_span) to commercial campaigns for Amazon and Microsoft[span_9](start_span)[span_9](end_span), my work centers on speed, editorial precision, and visual narrative that engages immediately.
         </p>
       </div>
 
       <div class="metrics-bar">
         <div class="metric-item">
           <div class="val">20+ YRS</div>
-          <div class="lbl">Broadcast & Media</div>
+          <div class="lbl">Broadcast & Media[span_10](start_span)[span_10](end_span)</div>
         </div>
         <div class="metric-item">
           <div class="val">30M+</div>
-          <div class="lbl">Digital Video Views</div>
+          <div class="lbl">Digital Video Views[span_11](start_span)[span_11](end_span)</div>
         </div>
         <div class="metric-item">
           <div class="val">NBC / CNBC</div>
-          <div class="lbl">National & Affiliate Broadcast</div>
+          <div class="lbl">National & Affiliate Broadcast[span_12](start_span)[span_12](end_span)[span_13](start_span)[span_13](end_span)</div>
         </div>
         <div class="metric-item">
           <div class="val">AMAZON / MSFT</div>
-          <div class="lbl">Branded Commercial Delivery</div>
+          <div class="lbl">Branded Commercial Delivery[span_14](start_span)[span_14](end_span)</div>
         </div>
       </div>
     </section>
 
     <div class="grid-label">
       <span class="meta-mono">// CURATED REEL CUTS (4-PART WORK SHOWCASE)</span>
-      <span class="meta-mono">NEW ORLEANS, LA</span>
+      <span class="meta-mono">NEW ORLEANS, LA[span_15](start_span)[span_15](end_span)</span>
     </div>
 
     <main class="reel-grid">
@@ -432,10 +463,10 @@
 
     <footer>
       <div>
-        <p class="meta-mono">ROBERT JACOBSON // (512) 439-9377</p>
+        <p class="meta-mono">ROBERT JACOBSON // (512) 439-9377[span_16](start_span)[span_16](end_span)</p>
       </div>
-      <div class="direct-links">
-        <a class="contact-link" href="mailto:robertjacobson@startmail.com">EMAIL DIRECT →</a>
+      <div>
+        <a class="contact-link" href="mailto:robertjacobson@startmail.com">EMAIL DIRECT →[span_17](start_span)[span_17](end_span)</a>
       </div>
     </footer>
   </div>
