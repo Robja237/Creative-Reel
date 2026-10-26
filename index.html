@@ -7,7 +7,7 @@
   
   <!-- Grotesque Display & Technical Monospace Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
@@ -31,7 +31,7 @@
       background-color: var(--bg);
       color: var(--text-main);
       font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-      padding: 1.75rem 1.25rem;
+      padding: 1.5rem 1.25rem;
       min-height: 100vh;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
@@ -49,15 +49,15 @@
       width: 100%;
     }
 
-    /* Top Identity Header */
+    /* Top Identity Header - Tightened Spacing */
     header {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      margin-bottom: 2rem;
+      margin-bottom: 1.15rem;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 1.25rem;
-      gap: 1.1rem;
+      padding-bottom: 0.85rem;
+      gap: 0.85rem;
       width: 100%;
     }
 
@@ -66,8 +66,8 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 3.5rem;
-        padding-bottom: 1.5rem;
+        margin-bottom: 2.5rem;
+        padding-bottom: 1.25rem;
       }
     }
 
@@ -103,14 +103,14 @@
       align-items: center;
       background: rgba(34, 197, 94, 0.08);
       border: 1px solid rgba(34, 197, 94, 0.25);
-      padding: 6px 14px;
+      padding: 6px 12px;
       border-radius: 999px;
-      font-size: 0.72rem;
+      font-size: clamp(0.64rem, 2.7vw, 0.72rem);
       font-family: 'Space Mono', monospace;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.04em;
       color: #4ade80;
       white-space: nowrap;
-      height: 32px;
+      height: 30px;
       box-sizing: border-box;
     }
 
@@ -119,7 +119,7 @@
       height: 6px;
       background-color: #22c55e;
       border-radius: 50%;
-      margin-right: 8px;
+      margin-right: 7px;
       box-shadow: 0 0 8px #22c55e;
       flex-shrink: 0;
       display: inline-block;
@@ -127,7 +127,7 @@
 
     /* Hero Section */
     .hero-wrap {
-      margin-bottom: 2.5rem;
+      margin-bottom: 2.25rem;
       max-width: 1040px;
     }
 
@@ -136,7 +136,7 @@
       font-size: 0.78rem;
       letter-spacing: 0.1em;
       color: var(--accent);
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.65rem;
       text-transform: uppercase;
     }
 
@@ -146,7 +146,7 @@
       letter-spacing: -0.04em;
       line-height: 1.08;
       color: var(--text-main);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     h1 span {
@@ -157,7 +157,7 @@
     .bio-panel {
       border-left: 2px solid var(--accent);
       padding-left: 1.25rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
     }
 
     .bio-text {
@@ -208,7 +208,7 @@
       display: flex;
       flex-direction: column;
       gap: 0.35rem;
-      margin-top: 3rem;
+      margin-top: 2.75rem;
       margin-bottom: 1.25rem;
       border-bottom: 1px solid var(--border);
       padding-bottom: 0.6rem;
@@ -309,7 +309,7 @@
 
     /* Footer */
     footer {
-      margin-top: 4rem;
+      margin-top: 3.5rem;
       padding-top: 1.75rem;
       border-top: 1px solid var(--border);
       display: flex;
@@ -351,7 +351,7 @@
       </div>
       <div>
         <div class="status-pill">
-          <span class="status-dot"></span>AVAILABLE FOR PRODUCTION & EDITORIAL
+          <span class="status-dot"></span>AVAILABLE FOR VIDEO PRODUCTION & EDITORIAL
         </div>
       </div>
     </header>
@@ -362,36 +362,36 @@
       
       <div class="bio-panel">
         <p class="bio-text">
-          Broadcast news editor and video producer with <strong>20+ years of frontline post-production experience</strong>[span_5](start_span)[span_5](end_span) spanning live television, national documentary programming, and global branded campaigns[span_6](start_span)[span_6](end_span).
+          Broadcast news editor and video producer with <strong>20+ years of frontline post-production experience</strong>[span_2](start_span)[span_2](end_span) spanning live television, national documentary programming, and global branded campaigns[span_3](start_span)[span_3](end_span).
         </p>
         <p class="bio-text" style="color: var(--text-muted); font-size: 0.98rem;">
-          From the daily deadlines of live broadcast newsrooms (Hearst/NBC WDSU)[span_7](start_span)[span_7](end_span) and national documentary television (CNBC)[span_8](start_span)[span_8](end_span) to commercial campaigns for Amazon and Microsoft[span_9](start_span)[span_9](end_span), my work centers on speed, editorial precision, and visual narrative that engages immediately.
+          From the daily deadlines of live broadcast newsrooms (Hearst/NBC WDSU)[span_4](start_span)[span_4](end_span) and national documentary television (CNBC)[span_5](start_span)[span_5](end_span) to commercial campaigns for Amazon and Microsoft[span_6](start_span)[span_6](end_span), my work centers on speed, editorial precision, and visual narrative that engages immediately.
         </p>
       </div>
 
       <div class="metrics-bar">
         <div class="metric-item">
           <div class="val">20+ YRS</div>
-          <div class="lbl">Broadcast & Media[span_10](start_span)[span_10](end_span)</div>
+          <div class="lbl">Broadcast & Media[span_7](start_span)[span_7](end_span)</div>
         </div>
         <div class="metric-item">
           <div class="val">30M+</div>
-          <div class="lbl">Digital Video Views[span_11](start_span)[span_11](end_span)</div>
+          <div class="lbl">Digital Video Views[span_8](start_span)[span_8](end_span)</div>
         </div>
         <div class="metric-item">
           <div class="val">NBC / CNBC</div>
-          <div class="lbl">National & Affiliate Broadcast[span_12](start_span)[span_12](end_span)[span_13](start_span)[span_13](end_span)</div>
+          <div class="lbl">National & Affiliate Broadcast[span_9](start_span)[span_9](end_span)[span_10](start_span)[span_10](end_span)</div>
         </div>
         <div class="metric-item">
           <div class="val">AMAZON / MSFT</div>
-          <div class="lbl">Branded Commercial Delivery[span_14](start_span)[span_14](end_span)</div>
+          <div class="lbl">Branded Commercial Delivery[span_11](start_span)[span_11](end_span)</div>
         </div>
       </div>
     </section>
 
     <div class="grid-label">
       <span class="meta-mono">// CURATED REEL CUTS (4-PART REEL)</span>
-      <span class="meta-mono">NEW ORLEANS, LA[span_15](start_span)[span_15](end_span)</span>
+      <span class="meta-mono">NEW ORLEANS, LA[span_12](start_span)[span_12](end_span)</span>
     </div>
 
     <main class="reel-grid">
@@ -442,7 +442,7 @@
         <div class="card-info">
           <div class="card-top">
             <span class="meta-mono">// DOCUMENTARY & NARRATIVE</span>
-            <span class="meta-mono">BROADCAST[span_16](start_span)[span_16](end_span)</span>
+            <span class="meta-mono">BROADCAST[span_13](start_span)[span_13](end_span)</span>
           </div>
           <h3>Editorial Documentary Cut</h3>
           <p>Character-focused visual narrative balancing pacing, archival integration, and clean narrative arcs under strict broadcast delivery standards.</p>
@@ -470,10 +470,10 @@
 
     <footer>
       <div>
-        <p class="meta-mono">ROBERT JACOBSON // (512) 439-9377[span_17](start_span)[span_17](end_span)</p>
+        <p class="meta-mono">ROBERT JACOBSON // (512) 439-9377[span_14](start_span)[span_14](end_span)</p>
       </div>
       <div>
-        <a class="contact-link" href="mailto:robertjacobson@startmail.com">EMAIL DIRECT &rarr;[span_18](start_span)[span_18](end_span)</a>
+        <a class="contact-link" href="mailto:robertjacobson@startmail.com">EMAIL DIRECT &rarr;[span_15](start_span)[span_15](end_span)</a>
       </div>
     </footer>
   </div>
