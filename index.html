@@ -123,6 +123,7 @@
       text-decoration: none;
       transition: all 0.2s ease;
       cursor: pointer;
+      border: none;
     }
 
     .btn-primary {
@@ -150,14 +151,21 @@
 
     /* CREDITS & CAREER BENCHMARKS */
     .stack-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
       padding-top: 2rem;
       margin-top: 2rem;
       border-top: 1px dashed var(--card-border);
       font-family: 'Space Mono', monospace;
       font-size: 0.75rem;
+    }
+
+    @media (min-width: 900px) {
+      .stack-strip {
+        grid-template-columns: 1fr 1.35fr 1fr;
+        gap: 2rem;
+      }
     }
 
     .stack-col {
@@ -174,6 +182,7 @@
 
     .stack-val {
       color: var(--text-muted);
+      white-space: nowrap;
     }
 
     /* GRID CONTROLS / FILTER BAR */
@@ -284,7 +293,6 @@
       background-color: #000;
     }
 
-    /* Subtle duration watermark badge */
     .runtime-badge {
       position: absolute;
       bottom: 10px;
@@ -380,6 +388,7 @@
     .footer-meta a {
       color: var(--meta);
       text-decoration: none;
+      cursor: pointer;
     }
 
     .footer-meta a:hover {
@@ -390,6 +399,133 @@
       .footer-meta {
         align-items: flex-start;
       }
+    }
+
+    /* FORMSPREE MODAL */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(9, 10, 11, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-dialog {
+      background-color: var(--surface);
+      border: 1px solid var(--card-border-hover);
+      border-radius: 8px;
+      width: 100%;
+      max-width: 520px;
+      padding: 2rem;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+      position: relative;
+      transform: translateY(12px);
+      transition: transform 0.25s ease;
+    }
+
+    .modal-backdrop.active .modal-dialog {
+      transform: translateY(0);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: transparent;
+      border: none;
+      color: var(--text-dim);
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: color 0.15s ease;
+    }
+
+    .modal-close:hover {
+      color: var(--text-main);
+    }
+
+    .modal-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-header h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      letter-spacing: -0.01em;
+    }
+
+    .modal-header p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .form-group label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      background-color: var(--bg);
+      border: 1px solid var(--card-border);
+      border-radius: 4px;
+      color: var(--text-main);
+      padding: 0.75rem 0.9rem;
+      font-family: inherit;
+      font-size: 0.92rem;
+      transition: border-color 0.15s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--meta);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .form-status {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+      display: none;
+    }
+
+    .form-status.success {
+      display: block;
+      color: var(--accent);
+    }
+
+    .form-status.error {
+      display: block;
+      color: #f85149;
     }
   </style>
 </head>
@@ -408,22 +544,22 @@
         </div>
         <div class="hero-actions">
           <a href="Robert_Jacobson_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View Resume ↗</a>
-          <a href="mailto:robja237@gmail.com" class="btn btn-primary">Get In Touch</a>
+          <button type="button" class="btn btn-primary" id="openModalBtn">Get In Touch</button>
         </div>
       </div>
 
       <div class="stack-strip">
         <div class="stack-col">
           <span class="stack-label">Core Toolset</span>
-          <span class="stack-val">Premiere Pro &bull; After Effects &bull; DaVinci Resolve</span>
+          <span class="stack-val">Premiere Pro &bull; After Effects &bull; Resolve</span>
         </div>
         <div class="stack-col">
           <span class="stack-label">Broadcast & Commercial Pedigree</span>
-          <span class="stack-val">NBC WDSU &bull; Retail Commercials &bull; Feature Trailers &bull; Motion Design</span>
+          <span class="stack-val">NBC WDSU &bull; Retail Spots &bull; Feature Trailers</span>
         </div>
         <div class="stack-col">
           <span class="stack-label">Career Benchmarks</span>
-          <span class="stack-val">500+ Broadcast Cuts &bull; 10+ Yrs Post-Production &bull; Regional & National Air</span>
+          <span class="stack-val">500+ Broadcast Cuts &bull; 10+ Yrs Post</span>
         </div>
       </div>
     </header>
@@ -562,9 +698,37 @@
       </div>
       <div class="footer-meta">
         <span>Robert Jacobson &bull; New Orleans, LA</span>
-        <span>Direct: <a href="mailto:robja237@gmail.com">robja237@gmail.com</a></span>
+        <span>Direct: <a id="footerContactBtn">Direct Message Form ↗</a></span>
       </div>
     </footer>
+  </div>
+
+  <!-- FORMSPREE MODAL -->
+  <div class="modal-backdrop" id="contactModal">
+    <div class="modal-dialog">
+      <button type="button" class="modal-close" id="closeModalBtn">&times;</button>
+      <div class="modal-header">
+        <h3>Initiate Project Inquiry</h3>
+        <p>Direct message to Robert Jacobson regarding editorial or production work.</p>
+      </div>
+
+      <form id="contactForm" action="https://formspree.io/f/https://formspree.io/f/mwllvkdb" method="POST">
+        <div class="form-group">
+          <label for="name">Name / Company</label>
+          <input type="text" id="name" name="name" required placeholder="Agency, Dealership, or Network">
+        </div>
+        <div class="form-group">
+          <label for="email">Direct Email</label>
+          <input type="email" id="email" name="_replyto" required placeholder="producer@domain.com">
+        </div>
+        <div class="form-group">
+          <label for="message">Project Scope & Timeline</label>
+          <textarea id="message" name="message" required placeholder="Brief project summary, deliverables, and estimated target dates..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 0.85rem;" id="submitBtn">Send Direct Message</button>
+        <div class="form-status" id="formStatus"></div>
+      </form>
+    </div>
   </div>
 
   <script>
@@ -572,7 +736,6 @@
     const videos = document.querySelectorAll('video');
     videos.forEach(video => {
       video.addEventListener('play', () => {
-        // Hide the runtime badge on the active video
         const badge = video.parentElement.querySelector('.runtime-badge');
         if (badge) badge.style.opacity = '0';
 
@@ -589,10 +752,11 @@
       });
     });
 
-    // 2. Global Escape key stops all playing videos
+    // 2. Global Escape key stops all playing videos and closes modal
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         videos.forEach(v => v.pause());
+        closeModal();
       }
     });
 
@@ -619,13 +783,84 @@
           }
         });
 
-        // Update tag text according to selection while keeping the archive context clear
         if (filter === 'all') {
           counter.textContent = 'CURATED ARCHIVE // SELECT EXCERPTS (FULL PORTFOLIO ON REQUEST)';
         } else {
           counter.textContent = `FILTERED SELECTION // ${btn.textContent.toUpperCase()} (FULL CATALOG ON REQUEST)`;
         }
       });
+    });
+
+    // 4. Formspree Modal Logic
+    const modal = document.getElementById('contactModal');
+    const openBtn = document.getElementById('openModalBtn');
+    const footerBtn = document.getElementById('footerContactBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const form = document.getElementById('contactForm');
+    const statusDiv = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function openModal() {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    openBtn.addEventListener('click', openModal);
+    if (footerBtn) footerBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // 5. AJAX Formspree Submission
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'TRANSMITTING...';
+      statusDiv.className = 'form-status';
+      statusDiv.style.display = 'none';
+
+      const data = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          form.reset();
+          statusDiv.className = 'form-status success';
+          statusDiv.textContent = 'MESSAGE SENT SUCCESSFULLY. TALK SOON.';
+          submitBtn.textContent = 'MESSAGE SENT';
+          setTimeout(() => {
+            closeModal();
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'SEND DIRECT MESSAGE';
+            statusDiv.style.display = 'none';
+          }, 2400);
+        } else {
+          const resData = await response.json();
+          statusDiv.className = 'form-status error';
+          statusDiv.textContent = resData.errors ? resData.errors.map(err => err.message).join(', ') : 'SUBMISSION ERROR. PLEASE TRY AGAIN.';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'RETRY';
+        }
+      } catch (err) {
+        statusDiv.className = 'form-status error';
+        statusDiv.textContent = 'NETWORK ERROR. PLEASE CHECK CONNECTION.';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'RETRY';
+      }
     });
   </script>
 </body>
