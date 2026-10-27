@@ -148,7 +148,7 @@
       border-color: var(--text-muted);
     }
 
-    /* CREDITS & STACK TICKER */
+    /* CREDITS & CAREER BENCHMARKS */
     .stack-strip {
       display: flex;
       flex-wrap: wrap;
@@ -224,6 +224,7 @@
       font-family: 'Space Mono', monospace;
       font-size: 0.75rem;
       color: var(--text-dim);
+      letter-spacing: 0.04em;
     }
 
     /* VIDEO CARDS GRID */
@@ -397,7 +398,7 @@
     <header>
       <div class="status-badge">
         <span class="status-dot"></span>
-        <span>OPEN FOR SELECT Q4 / Q1 EDITORIAL & PRODUCTION</span>
+        <span>AVAILABLE FOR SELECT COMMERCIAL & BROADCAST BOOKINGS</span>
       </div>
 
       <div class="hero-top">
@@ -421,8 +422,8 @@
           <span class="stack-val">NBC WDSU &bull; Retail Commercials &bull; Feature Trailers &bull; Motion Design</span>
         </div>
         <div class="stack-col">
-          <span class="stack-label">Market Focus</span>
-          <span class="stack-val">Gulf Coast Marine & Retail &bull; National Agencies</span>
+          <span class="stack-label">Career Benchmarks</span>
+          <span class="stack-val">500+ Broadcast Cuts &bull; 10+ Yrs Post-Production &bull; Regional & National Air</span>
         </div>
       </div>
     </header>
@@ -435,7 +436,7 @@
         <button class="filter-btn" data-filter="motion">Motion & VFX</button>
         <button class="filter-btn" data-filter="broadcast">Broadcast & Doc</button>
       </div>
-      <div class="grid-meta-count" id="projectCounter">SHOWING 6 OF 6 WORKS</div>
+      <div class="grid-meta-count" id="projectCounter">CURATED ARCHIVE // SELECT EXCERPTS (FULL PORTFOLIO ON REQUEST)</div>
     </div>
 
     <main class="reel-grid" id="reelGrid">
@@ -606,13 +607,11 @@
         btn.classList.add('active');
 
         const filter = btn.getAttribute('data-filter');
-        let visibleCount = 0;
 
         cards.forEach(card => {
           const category = card.getAttribute('data-category');
           if (filter === 'all' || category === filter) {
             card.classList.remove('hidden');
-            visibleCount++;
           } else {
             card.classList.add('hidden');
             const cardVideo = card.querySelector('video');
@@ -620,7 +619,12 @@
           }
         });
 
-        counter.textContent = `SHOWING ${visibleCount} OF ${cards.length} WORKS`;
+        // Update tag text according to selection while keeping the archive context clear
+        if (filter === 'all') {
+          counter.textContent = 'CURATED ARCHIVE // SELECT EXCERPTS (FULL PORTFOLIO ON REQUEST)';
+        } else {
+          counter.textContent = `FILTERED SELECTION // ${btn.textContent.toUpperCase()} (FULL CATALOG ON REQUEST)`;
+        }
       });
     });
   </script>
