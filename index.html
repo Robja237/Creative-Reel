@@ -65,20 +65,30 @@
       font-family: 'Space Mono', monospace;
       font-size: 0.8rem;
       color: var(--text-muted);
-      text-transform: uppercase;
       letter-spacing: 0.05em;
     }
 
-    .resume-link {
-      color: var(--meta);
-      text-decoration: none;
-      transition: opacity 0.15s ease, color 0.15s ease;
+    /* Clean, interactive pill button for Resume */
+    .resume-btn {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
       font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-main);
+      background-color: transparent;
+      border: 1px solid var(--card-border-hover);
+      padding: 0.4rem 0.85rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
     }
 
-    .resume-link:hover {
-      color: #ffffff;
-      text-decoration: underline;
+    .resume-btn:hover {
+      background-color: var(--text-main);
+      color: var(--bg);
+      border-color: var(--text-main);
     }
 
     .reel-grid {
@@ -143,7 +153,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.65rem;
       font-size: 0.75rem;
     }
 
@@ -157,9 +167,12 @@
       color: var(--text-muted);
     }
 
+    /* Fixed height ensures headlines never throw off paragraph alignment */
     .card-info h3 {
       font-size: 1.15rem;
       font-weight: 600;
+      line-height: 1.35;
+      min-height: 2.85rem;
       margin-bottom: 0.5rem;
       color: var(--text-main);
     }
@@ -203,7 +216,7 @@
 
     <div class="grid-label">
       <span class="meta-mono">// CURATED EDITORIAL & PRODUCTION REEL</span>
-      <a href="Robert_Jacobson_Resume.pdf" target="_blank" rel="noopener noreferrer" class="meta-mono resume-link">[ VIEW / DOWNLOAD CV ↗ ]</a>
+      <a href="Robert_Jacobson_Resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-btn">View Resume ↗</a>
     </div>
 
     <main class="reel-grid">
